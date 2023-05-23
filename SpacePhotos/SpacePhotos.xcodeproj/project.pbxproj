@@ -1,0 +1,641 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14E8D9002A1CE967004A6781 /* SpacePhotosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8D8FF2A1CE967004A6781 /* SpacePhotosApp.swift */; };
+		14E8D9022A1CE967004A6781 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8D9012A1CE967004A6781 /* ContentView.swift */; };
+		14E8D9042A1CE968004A6781 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14E8D9032A1CE968004A6781 /* Assets.xcassets */; };
+		14E8D9082A1CE968004A6781 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14E8D9072A1CE968004A6781 /* Preview Assets.xcassets */; };
+		14E8D9122A1CE968004A6781 /* SpacePhotosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8D9112A1CE968004A6781 /* SpacePhotosTests.swift */; };
+		14E8D91C2A1CE968004A6781 /* SpacePhotosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8D91B2A1CE968004A6781 /* SpacePhotosUITests.swift */; };
+		14E8D91E2A1CE968004A6781 /* SpacePhotosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8D91D2A1CE968004A6781 /* SpacePhotosUITestsLaunchTests.swift */; };
+		14E8D92B2A1CE9AD004A6781 /* SpacePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8D92A2A1CE9AD004A6781 /* SpacePhoto.swift */; };
+		14E8D92D2A1CEA17004A6781 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8D92C2A1CEA17004A6781 /* Photos.swift */; };
+		14E8D92F2A1CEA6A004A6781 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8D92E2A1CEA6A004A6781 /* PhotoView.swift */; };
+		14E8D9312A1CEACA004A6781 /* CatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8D9302A1CEACA004A6781 /* CatalogView.swift */; };
+		14E8D9332A1CF34E004A6781 /* SavePhotoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8D9322A1CF34E004A6781 /* SavePhotoButton.swift */; };
+		14E8D9352A1CF555004A6781 /* SavedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8D9342A1CF555004A6781 /* SavedView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		14E8D90E2A1CE968004A6781 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14E8D8F42A1CE967004A6781 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14E8D8FB2A1CE967004A6781;
+			remoteInfo = SpacePhotos;
+		};
+		14E8D9182A1CE968004A6781 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14E8D8F42A1CE967004A6781 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14E8D8FB2A1CE967004A6781;
+			remoteInfo = SpacePhotos;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		14E8D8FC2A1CE967004A6781 /* SpacePhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpacePhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		14E8D8FF2A1CE967004A6781 /* SpacePhotosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacePhotosApp.swift; sourceTree = "<group>"; };
+		14E8D9012A1CE967004A6781 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		14E8D9032A1CE968004A6781 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		14E8D9052A1CE968004A6781 /* SpacePhotos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpacePhotos.entitlements; sourceTree = "<group>"; };
+		14E8D9072A1CE968004A6781 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		14E8D90D2A1CE968004A6781 /* SpacePhotosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpacePhotosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		14E8D9112A1CE968004A6781 /* SpacePhotosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacePhotosTests.swift; sourceTree = "<group>"; };
+		14E8D9172A1CE968004A6781 /* SpacePhotosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpacePhotosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		14E8D91B2A1CE968004A6781 /* SpacePhotosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacePhotosUITests.swift; sourceTree = "<group>"; };
+		14E8D91D2A1CE968004A6781 /* SpacePhotosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacePhotosUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		14E8D92A2A1CE9AD004A6781 /* SpacePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacePhoto.swift; sourceTree = "<group>"; };
+		14E8D92C2A1CEA17004A6781 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
+		14E8D92E2A1CEA6A004A6781 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
+		14E8D9302A1CEACA004A6781 /* CatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogView.swift; sourceTree = "<group>"; };
+		14E8D9322A1CF34E004A6781 /* SavePhotoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePhotoButton.swift; sourceTree = "<group>"; };
+		14E8D9342A1CF555004A6781 /* SavedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		14E8D8F92A1CE967004A6781 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14E8D90A2A1CE968004A6781 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14E8D9142A1CE968004A6781 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14E8D8F32A1CE967004A6781 = {
+			isa = PBXGroup;
+			children = (
+				14E8D8FE2A1CE967004A6781 /* SpacePhotos */,
+				14E8D9102A1CE968004A6781 /* SpacePhotosTests */,
+				14E8D91A2A1CE968004A6781 /* SpacePhotosUITests */,
+				14E8D8FD2A1CE967004A6781 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		14E8D8FD2A1CE967004A6781 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				14E8D8FC2A1CE967004A6781 /* SpacePhotos.app */,
+				14E8D90D2A1CE968004A6781 /* SpacePhotosTests.xctest */,
+				14E8D9172A1CE968004A6781 /* SpacePhotosUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		14E8D8FE2A1CE967004A6781 /* SpacePhotos */ = {
+			isa = PBXGroup;
+			children = (
+				14E8D8FF2A1CE967004A6781 /* SpacePhotosApp.swift */,
+				14E8D9012A1CE967004A6781 /* ContentView.swift */,
+				14E8D9342A1CF555004A6781 /* SavedView.swift */,
+				14E8D92E2A1CEA6A004A6781 /* PhotoView.swift */,
+				14E8D9322A1CF34E004A6781 /* SavePhotoButton.swift */,
+				14E8D92A2A1CE9AD004A6781 /* SpacePhoto.swift */,
+				14E8D9302A1CEACA004A6781 /* CatalogView.swift */,
+				14E8D92C2A1CEA17004A6781 /* Photos.swift */,
+				14E8D9032A1CE968004A6781 /* Assets.xcassets */,
+				14E8D9052A1CE968004A6781 /* SpacePhotos.entitlements */,
+				14E8D9062A1CE968004A6781 /* Preview Content */,
+			);
+			path = SpacePhotos;
+			sourceTree = "<group>";
+		};
+		14E8D9062A1CE968004A6781 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				14E8D9072A1CE968004A6781 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		14E8D9102A1CE968004A6781 /* SpacePhotosTests */ = {
+			isa = PBXGroup;
+			children = (
+				14E8D9112A1CE968004A6781 /* SpacePhotosTests.swift */,
+			);
+			path = SpacePhotosTests;
+			sourceTree = "<group>";
+		};
+		14E8D91A2A1CE968004A6781 /* SpacePhotosUITests */ = {
+			isa = PBXGroup;
+			children = (
+				14E8D91B2A1CE968004A6781 /* SpacePhotosUITests.swift */,
+				14E8D91D2A1CE968004A6781 /* SpacePhotosUITestsLaunchTests.swift */,
+			);
+			path = SpacePhotosUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		14E8D8FB2A1CE967004A6781 /* SpacePhotos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14E8D9212A1CE968004A6781 /* Build configuration list for PBXNativeTarget "SpacePhotos" */;
+			buildPhases = (
+				14E8D8F82A1CE967004A6781 /* Sources */,
+				14E8D8F92A1CE967004A6781 /* Frameworks */,
+				14E8D8FA2A1CE967004A6781 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpacePhotos;
+			productName = SpacePhotos;
+			productReference = 14E8D8FC2A1CE967004A6781 /* SpacePhotos.app */;
+			productType = "com.apple.product-type.application";
+		};
+		14E8D90C2A1CE968004A6781 /* SpacePhotosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14E8D9242A1CE968004A6781 /* Build configuration list for PBXNativeTarget "SpacePhotosTests" */;
+			buildPhases = (
+				14E8D9092A1CE968004A6781 /* Sources */,
+				14E8D90A2A1CE968004A6781 /* Frameworks */,
+				14E8D90B2A1CE968004A6781 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14E8D90F2A1CE968004A6781 /* PBXTargetDependency */,
+			);
+			name = SpacePhotosTests;
+			productName = SpacePhotosTests;
+			productReference = 14E8D90D2A1CE968004A6781 /* SpacePhotosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		14E8D9162A1CE968004A6781 /* SpacePhotosUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14E8D9272A1CE968004A6781 /* Build configuration list for PBXNativeTarget "SpacePhotosUITests" */;
+			buildPhases = (
+				14E8D9132A1CE968004A6781 /* Sources */,
+				14E8D9142A1CE968004A6781 /* Frameworks */,
+				14E8D9152A1CE968004A6781 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14E8D9192A1CE968004A6781 /* PBXTargetDependency */,
+			);
+			name = SpacePhotosUITests;
+			productName = SpacePhotosUITests;
+			productReference = 14E8D9172A1CE968004A6781 /* SpacePhotosUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		14E8D8F42A1CE967004A6781 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					14E8D8FB2A1CE967004A6781 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					14E8D90C2A1CE968004A6781 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 14E8D8FB2A1CE967004A6781;
+					};
+					14E8D9162A1CE968004A6781 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 14E8D8FB2A1CE967004A6781;
+					};
+				};
+			};
+			buildConfigurationList = 14E8D8F72A1CE967004A6781 /* Build configuration list for PBXProject "SpacePhotos" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 14E8D8F32A1CE967004A6781;
+			productRefGroup = 14E8D8FD2A1CE967004A6781 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				14E8D8FB2A1CE967004A6781 /* SpacePhotos */,
+				14E8D90C2A1CE968004A6781 /* SpacePhotosTests */,
+				14E8D9162A1CE968004A6781 /* SpacePhotosUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		14E8D8FA2A1CE967004A6781 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14E8D9082A1CE968004A6781 /* Preview Assets.xcassets in Resources */,
+				14E8D9042A1CE968004A6781 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14E8D90B2A1CE968004A6781 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14E8D9152A1CE968004A6781 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		14E8D8F82A1CE967004A6781 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14E8D9352A1CF555004A6781 /* SavedView.swift in Sources */,
+				14E8D92D2A1CEA17004A6781 /* Photos.swift in Sources */,
+				14E8D9022A1CE967004A6781 /* ContentView.swift in Sources */,
+				14E8D92B2A1CE9AD004A6781 /* SpacePhoto.swift in Sources */,
+				14E8D9332A1CF34E004A6781 /* SavePhotoButton.swift in Sources */,
+				14E8D92F2A1CEA6A004A6781 /* PhotoView.swift in Sources */,
+				14E8D9312A1CEACA004A6781 /* CatalogView.swift in Sources */,
+				14E8D9002A1CE967004A6781 /* SpacePhotosApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14E8D9092A1CE968004A6781 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14E8D9122A1CE968004A6781 /* SpacePhotosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14E8D9132A1CE968004A6781 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14E8D91E2A1CE968004A6781 /* SpacePhotosUITestsLaunchTests.swift in Sources */,
+				14E8D91C2A1CE968004A6781 /* SpacePhotosUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		14E8D90F2A1CE968004A6781 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14E8D8FB2A1CE967004A6781 /* SpacePhotos */;
+			targetProxy = 14E8D90E2A1CE968004A6781 /* PBXContainerItemProxy */;
+		};
+		14E8D9192A1CE968004A6781 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14E8D8FB2A1CE967004A6781 /* SpacePhotos */;
+			targetProxy = 14E8D9182A1CE968004A6781 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		14E8D91F2A1CE968004A6781 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		14E8D9202A1CE968004A6781 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		14E8D9222A1CE968004A6781 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SpacePhotos/SpacePhotos.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SpacePhotos/Preview Content\"";
+				DEVELOPMENT_TEAM = HB6M77SRWM;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrewgilliland.SpacePhotos;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		14E8D9232A1CE968004A6781 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SpacePhotos/SpacePhotos.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SpacePhotos/Preview Content\"";
+				DEVELOPMENT_TEAM = HB6M77SRWM;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrewgilliland.SpacePhotos;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		14E8D9252A1CE968004A6781 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HB6M77SRWM;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrewgilliland.SpacePhotosTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpacePhotos.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SpacePhotos";
+			};
+			name = Debug;
+		};
+		14E8D9262A1CE968004A6781 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HB6M77SRWM;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrewgilliland.SpacePhotosTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpacePhotos.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SpacePhotos";
+			};
+			name = Release;
+		};
+		14E8D9282A1CE968004A6781 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HB6M77SRWM;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrewgilliland.SpacePhotosUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SpacePhotos;
+			};
+			name = Debug;
+		};
+		14E8D9292A1CE968004A6781 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HB6M77SRWM;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrewgilliland.SpacePhotosUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SpacePhotos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		14E8D8F72A1CE967004A6781 /* Build configuration list for PBXProject "SpacePhotos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14E8D91F2A1CE968004A6781 /* Debug */,
+				14E8D9202A1CE968004A6781 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14E8D9212A1CE968004A6781 /* Build configuration list for PBXNativeTarget "SpacePhotos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14E8D9222A1CE968004A6781 /* Debug */,
+				14E8D9232A1CE968004A6781 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14E8D9242A1CE968004A6781 /* Build configuration list for PBXNativeTarget "SpacePhotosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14E8D9252A1CE968004A6781 /* Debug */,
+				14E8D9262A1CE968004A6781 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14E8D9272A1CE968004A6781 /* Build configuration list for PBXNativeTarget "SpacePhotosUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14E8D9282A1CE968004A6781 /* Debug */,
+				14E8D9292A1CE968004A6781 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 14E8D8F42A1CE967004A6781 /* Project object */;
+}
