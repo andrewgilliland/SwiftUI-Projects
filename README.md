@@ -1,6 +1,7 @@
 #  SwiftUI Projects
 
 1. iExpense
+    -
 
 2. MoonShot
     - NavigationView
@@ -15,3 +16,5 @@
     - Shape, InsettableShape
     - .strokeBorder()
     - FillStyle(eoFill: Bool)
+    - .blendMode, .colorMultiply, .saturation(), .blur()
+    - withAnimatableData

@@ -18,6 +18,15 @@
 		14E8D8912A16613C004A6781 /* Arc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8D8902A16613C004A6781 /* Arc.swift */; };
 		14E8D8932A166879004A6781 /* Flower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8D8922A166879004A6781 /* Flower.swift */; };
 		14E8D8952A16689D004A6781 /* FlowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8D8942A16689D004A6781 /* FlowerView.swift */; };
+		14E8D8972A170592004A6781 /* ColorCyclingCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8D8962A170592004A6781 /* ColorCyclingCircleView.swift */; };
+		14E8D8992A170F90004A6781 /* Blend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8D8982A170F90004A6781 /* Blend.swift */; };
+		14E8D89B2A17A5C2004A6781 /* Saturation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8D89A2A17A5C2004A6781 /* Saturation.swift */; };
+		14E8D89D2A17A758004A6781 /* Trapezoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8D89C2A17A758004A6781 /* Trapezoid.swift */; };
+		14E8D89F2A17A917004A6781 /* TrapezoidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8D89E2A17A917004A6781 /* TrapezoidView.swift */; };
+		14E8D8A12A17B048004A6781 /* Checkerboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8D8A02A17B048004A6781 /* Checkerboard.swift */; };
+		14E8D8A32A17B180004A6781 /* CheckerboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8D8A22A17B180004A6781 /* CheckerboardView.swift */; };
+		14E8D8A52A17B479004A6781 /* Spirograph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8D8A42A17B479004A6781 /* Spirograph.swift */; };
+		14E8D8A72A1AFC6B004A6781 /* SpirographView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8D8A62A1AFC6B004A6781 /* SpirographView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +62,15 @@
 		14E8D8902A16613C004A6781 /* Arc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arc.swift; sourceTree = "<group>"; };
 		14E8D8922A166879004A6781 /* Flower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flower.swift; sourceTree = "<group>"; };
 		14E8D8942A16689D004A6781 /* FlowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerView.swift; sourceTree = "<group>"; };
+		14E8D8962A170592004A6781 /* ColorCyclingCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCyclingCircleView.swift; sourceTree = "<group>"; };
+		14E8D8982A170F90004A6781 /* Blend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blend.swift; sourceTree = "<group>"; };
+		14E8D89A2A17A5C2004A6781 /* Saturation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Saturation.swift; sourceTree = "<group>"; };
+		14E8D89C2A17A758004A6781 /* Trapezoid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trapezoid.swift; sourceTree = "<group>"; };
+		14E8D89E2A17A917004A6781 /* TrapezoidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrapezoidView.swift; sourceTree = "<group>"; };
+		14E8D8A02A17B048004A6781 /* Checkerboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkerboard.swift; sourceTree = "<group>"; };
+		14E8D8A22A17B180004A6781 /* CheckerboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerboardView.swift; sourceTree = "<group>"; };
+		14E8D8A42A17B479004A6781 /* Spirograph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spirograph.swift; sourceTree = "<group>"; };
+		14E8D8A62A1AFC6B004A6781 /* SpirographView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpirographView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +123,15 @@
 			children = (
 				14E8D8612A16594E004A6781 /* DrawingApp.swift */,
 				14E8D8632A16594E004A6781 /* ContentView.swift */,
+				14E8D8A62A1AFC6B004A6781 /* SpirographView.swift */,
+				14E8D8A42A17B479004A6781 /* Spirograph.swift */,
+				14E8D8A02A17B048004A6781 /* Checkerboard.swift */,
+				14E8D8A22A17B180004A6781 /* CheckerboardView.swift */,
+				14E8D8962A170592004A6781 /* ColorCyclingCircleView.swift */,
+				14E8D8982A170F90004A6781 /* Blend.swift */,
+				14E8D89A2A17A5C2004A6781 /* Saturation.swift */,
+				14E8D89C2A17A758004A6781 /* Trapezoid.swift */,
+				14E8D89E2A17A917004A6781 /* TrapezoidView.swift */,
 				14E8D8942A16689D004A6781 /* FlowerView.swift */,
 				14E8D8922A166879004A6781 /* Flower.swift */,
 				14E8D8902A16613C004A6781 /* Arc.swift */,
@@ -271,12 +298,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14E8D89D2A17A758004A6781 /* Trapezoid.swift in Sources */,
+				14E8D8A72A1AFC6B004A6781 /* SpirographView.swift in Sources */,
 				14E8D8642A16594E004A6781 /* ContentView.swift in Sources */,
+				14E8D8972A170592004A6781 /* ColorCyclingCircleView.swift in Sources */,
+				14E8D89B2A17A5C2004A6781 /* Saturation.swift in Sources */,
 				14E8D8952A16689D004A6781 /* FlowerView.swift in Sources */,
+				14E8D8992A170F90004A6781 /* Blend.swift in Sources */,
+				14E8D8A12A17B048004A6781 /* Checkerboard.swift in Sources */,
 				14E8D8912A16613C004A6781 /* Arc.swift in Sources */,
+				14E8D8A32A17B180004A6781 /* CheckerboardView.swift in Sources */,
 				14E8D8932A166879004A6781 /* Flower.swift in Sources */,
+				14E8D8A52A17B479004A6781 /* Spirograph.swift in Sources */,
 				14E8D8622A16594E004A6781 /* DrawingApp.swift in Sources */,
 				14E8D88F2A1660C2004A6781 /* Triangle.swift in Sources */,
+				14E8D89F2A17A917004A6781 /* TrapezoidView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
