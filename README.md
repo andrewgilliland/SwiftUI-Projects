@@ -8,6 +8,7 @@
     - GeometryReader
     - Codable Protocol - Bundle-Decodable
     - LazyVGrid
+    
 3. CustomTabBar
     
 4. Drawing
@@ -18,3 +19,9 @@
     - FillStyle(eoFill: Bool)
     - .blendMode, .colorMultiply, .saturation(), .blur()
     - withAnimatableData
+
+5. BookWorm
+    - Core Data
+
+6. SpacePhotos
+    - Concurrency
