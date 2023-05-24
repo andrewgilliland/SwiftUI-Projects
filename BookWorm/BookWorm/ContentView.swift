@@ -9,27 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: []) var students: FetchedResults<Student>
+    @FetchRequest(sortDescriptors: []) var books: FetchedResults<Book>
+    
+    @State private var showingAddScreen = false
     
     var body: some View {
-        VStack {
-            List(students) { student in
-                Text(student.name ?? "Unknown")
-            }
-            
-            Button("Add") {
-                let firstNames = ["Axel", "Biff", "Burt", "Tanya"]
-                let lastNames = ["Foley", "Tannen", "Reynolds", "Harding"]
-                
-                let chosenFirstName = firstNames.randomElement()!
-                let choseLastName = lastNames.randomElement()!
-                
-                let student = Student(context: moc)
-                student.id = UUID()
-                student.name = "\(chosenFirstName) \(choseLastName)"
-                
-                try? moc.save()
-            }
+        NavigationView {
+            Text("Count: \(books.count)")
+                .navigationTitle("BookWorm")
+                .toolbar {
+                    Button {
+                        showingAddScreen.toggle()
+                    } label: {
+                        Label("Add Book", systemImage: "plus")
+                    }
+                }
+                .sheet(isPresented: $showingAddScreen) {
+                    AddBookView()
+                }
         }
     }
 }
