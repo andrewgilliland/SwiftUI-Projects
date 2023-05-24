@@ -13,8 +13,12 @@ struct SpacePhoto {
     var date: Date
     var url: URL
     
-    init(data) {
+    init() {
         
+    }
+    
+    func save() async {
+        print("Save!!!")
     }
 }
 

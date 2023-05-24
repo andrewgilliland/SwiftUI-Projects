@@ -13,7 +13,7 @@ struct SavePhotoButton: View {
     
     var body: some View {
         Button {
-            async {
+            Task {
                 isSaving = true
                 await photo.save()
                 isSaving = false
