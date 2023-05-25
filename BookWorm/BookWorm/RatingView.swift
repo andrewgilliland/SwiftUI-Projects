@@ -10,6 +10,8 @@ import SwiftUI
 struct RatingView: View {
     @Binding var rating: Int
     
+    
+    
     var label = ""
     var maximumRating = 5
     

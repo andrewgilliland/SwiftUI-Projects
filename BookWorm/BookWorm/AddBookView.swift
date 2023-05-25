@@ -11,13 +11,14 @@ struct AddBookView: View {
     @Environment(\.managedObjectContext) var moc
     @Environment(\.dismiss) var dismiss
     
+    let genres = ["Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]
+    
     @State private var title = ""
     @State private var author = ""
     @State private var rating = 3
-    @State private var genre = ""
+    @State private var genre = "Fantasy"
     @State private var review = ""
     
-    let genres = ["Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]
     
     var body: some View {
         NavigationView {
@@ -51,6 +52,7 @@ struct AddBookView: View {
                         newBook.author = author
                         newBook.genre = genre
                         newBook.review = review
+                        newBook.rating = Int16(rating)
                         
                         try? moc.save()
                         dismiss()

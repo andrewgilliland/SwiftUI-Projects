@@ -12,7 +12,10 @@ struct DetailView: View {
     
     
     var body: some View {
+            
         ScrollView {
+            var thing = print("Rating: \(book.rating)")
+            
             ZStack(alignment: .bottomTrailing) {
                 Image(book.genre ?? "Fantasy")
                     .resizable()
