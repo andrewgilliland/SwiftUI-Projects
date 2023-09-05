@@ -10,10 +10,11 @@
 		14158C782A26D27700C7533B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14158C772A26D27700C7533B /* AppDelegate.swift */; };
 		14158C7A2A26D27700C7533B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14158C792A26D27700C7533B /* SceneDelegate.swift */; };
 		14158C7C2A26D27700C7533B /* FirstScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14158C7B2A26D27700C7533B /* FirstScreen.swift */; };
-		14158C812A26D27800C7533B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14158C802A26D27800C7533B /* Assets.xcassets */; };
 		14158C842A26D27800C7533B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14158C822A26D27800C7533B /* LaunchScreen.storyboard */; };
 		14158C8C2A26DFA500C7533B /* SecondScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14158C8B2A26DFA500C7533B /* SecondScreen.swift */; };
 		14158C8E2A27B83900C7533B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14158C8D2A27B83900C7533B /* ViewController.swift */; };
+		14158C912A28DB3B00C7533B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14158C902A28DB3B00C7533B /* Assets.xcassets */; };
+		14158CB22A291E2A00C7533B /* level1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 14158C8F2A28D1FD00C7533B /* level1.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,11 +22,12 @@
 		14158C772A26D27700C7533B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14158C792A26D27700C7533B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		14158C7B2A26D27700C7533B /* FirstScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreen.swift; sourceTree = "<group>"; };
-		14158C802A26D27800C7533B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14158C832A26D27800C7533B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14158C852A26D27800C7533B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14158C8B2A26DFA500C7533B /* SecondScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreen.swift; sourceTree = "<group>"; };
 		14158C8D2A27B83900C7533B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		14158C8F2A28D1FD00C7533B /* level1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = level1.txt; sourceTree = "<group>"; };
+		14158C902A28DB3B00C7533B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +64,11 @@
 				14158C792A26D27700C7533B /* SceneDelegate.swift */,
 				14158C7B2A26D27700C7533B /* FirstScreen.swift */,
 				14158C8D2A27B83900C7533B /* ViewController.swift */,
+				14158C8F2A28D1FD00C7533B /* level1.txt */,
 				14158C8B2A26DFA500C7533B /* SecondScreen.swift */,
-				14158C802A26D27800C7533B /* Assets.xcassets */,
 				14158C822A26D27800C7533B /* LaunchScreen.storyboard */,
 				14158C852A26D27800C7533B /* Info.plist */,
+				14158C902A28DB3B00C7533B /* Assets.xcassets */,
 			);
 			path = UIKitProject;
 			sourceTree = "<group>";
@@ -128,8 +131,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14158CB22A291E2A00C7533B /* level1.txt in Resources */,
+				14158C912A28DB3B00C7533B /* Assets.xcassets in Resources */,
 				14158C842A26D27800C7533B /* LaunchScreen.storyboard in Resources */,
-				14158C812A26D27800C7533B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
