@@ -3,8 +3,10 @@ import Combine
 import RealityKit
 import SwiftUI
 
-class CustomARView: ARView {
+class CustomARView: ARView, ARSessionDelegate {
     @ObservedObject var plants: Plants
+    var timer: Timer?
+    var cameraPosition: simd_float3?
 
     required init(plants: Plants, frame frameRect: CGRect) {
         self.plants = plants
@@ -20,6 +22,13 @@ class CustomARView: ARView {
         self.init(plants: plants, frame: UIScreen.main.bounds)
 
         subscribeToActionStream()
+        session.delegate = self
+//        drawLine()
+    }
+
+    func session(_: ARSession, didUpdate _: [ARAnchor]) {
+//        print("Session didUpdate")
+        startCameraPositionUpdateTimer()
     }
 
     @MainActor dynamic required init(frame _: CGRect) {
@@ -42,6 +51,46 @@ class CustomARView: ARView {
                 }
             }
             .store(in: &cancellables)
+    }
+
+    func startCameraPositionUpdateTimer() {
+        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
+            guard let camera = self?.session.currentFrame?.camera else { return }
+            let cameraTransform = camera.transform
+            self?.cameraPosition = simd_make_float3(cameraTransform.columns.3)
+
+            print("Camera Position: \(String(describing: self?.cameraPosition))")
+
+//            let entity = AnchorEntity(plane: .horizontal)
+//            entity.addChild(ModelEntity(mesh: MeshResource.generateBox(size: 0.01), materials: [SimpleMaterial(color: .red, isMetallic: true)]))
+//            entity.transform.translation = (self?.cameraPostion)!
+//            self?.scene.addAnchor(entity)
+            if !(self?.plants.value.isEmpty)! {
+                print("drawLine")
+                self?.drawLine()
+            }
+        }
+    }
+
+    func drawLine() {
+        let startPosition = plants.value.last?.position ?? SIMD3<Float>(-0.5, 0, -1)
+        let endPosition = cameraPosition ?? SIMD3<Float>(0.5, 0, 1)
+
+        let midpoint = (startPosition + endPosition) / 2
+
+        let line = AnchorEntity()
+        line.position = midpoint
+        line.look(at: startPosition, from: midpoint, relativeTo: nil)
+
+        let meters = simd_distance(startPosition, endPosition)
+        let lineMaterial = SimpleMaterial(color: .red, roughness: 1, isMetallic: false)
+        let bottomLineMesh = MeshResource.generateBox(width: 0.025, height: 0.025 / 2.5, depth: meters)
+        let bottomLineEntity = ModelEntity(mesh: bottomLineMesh, materials: [lineMaterial])
+        bottomLineEntity.position = .init(0, 0.025, 0)
+
+        line.addChild(bottomLineEntity)
+
+        scene.addAnchor(line)
     }
 
     func configurationExamples() {
@@ -107,9 +156,6 @@ class CustomARView: ARView {
         if plants.value.count >= 2 {
             print("More than one plant added")
         }
-
-        guard let camera = session.currentFrame?.camera else { return }
-        print(camera)
     }
 
     func getCurrentPosition() {

@@ -16,6 +16,9 @@
 		14158CD32A38A8C400C7533B /* ARAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14158CD22A38A8C400C7533B /* ARAction.swift */; };
 		14158CD52A38A91C00C7533B /* ARManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14158CD42A38A91C00C7533B /* ARManager.swift */; };
 		14AD76482AA762BE004BFCCA /* PlantsModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AD76472AA762BE004BFCCA /* PlantsModal.swift */; };
+		14AD764B2AA8B21D004BFCCA /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AD764A2AA8B21D004BFCCA /* Plant.swift */; };
+		14AD764D2AA8B2A1004BFCCA /* Plants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AD764C2AA8B2A1004BFCCA /* Plants.swift */; };
+		14AD764F2AA8B2B9004BFCCA /* Emergence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AD764E2AA8B2B9004BFCCA /* Emergence.swift */; };
 		14F0B1FF2A6025470019497B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F0B1FE2A6025470019497B /* Color.swift */; };
 		14F0B2042A60346C0019497B /* ARScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F0B2032A60346C0019497B /* ARScreen.swift */; };
 		14F0B2062A60378C0019497B /* DataTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F0B2052A60378C0019497B /* DataTab.swift */; };
@@ -36,6 +39,9 @@
 		14158CD22A38A8C400C7533B /* ARAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARAction.swift; sourceTree = "<group>"; };
 		14158CD42A38A91C00C7533B /* ARManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARManager.swift; sourceTree = "<group>"; };
 		14AD76472AA762BE004BFCCA /* PlantsModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsModal.swift; sourceTree = "<group>"; };
+		14AD764A2AA8B21D004BFCCA /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
+		14AD764C2AA8B2A1004BFCCA /* Plants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plants.swift; sourceTree = "<group>"; };
+		14AD764E2AA8B2B9004BFCCA /* Emergence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emergence.swift; sourceTree = "<group>"; };
 		14F0B1FE2A6025470019497B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		14F0B2032A60346C0019497B /* ARScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScreen.swift; sourceTree = "<group>"; };
 		14F0B2052A60378C0019497B /* DataTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTab.swift; sourceTree = "<group>"; };
@@ -75,6 +81,7 @@
 		14158CBE2A3893D800C7533B /* PrecisionScout */ = {
 			isa = PBXGroup;
 			children = (
+				14AD76492AA8B20B004BFCCA /* Models */,
 				14AD76462AA7628C004BFCCA /* Views */,
 				14F0B20D2A627E140019497B /* Styles */,
 				14F0B2002A6034380019497B /* Screens */,
@@ -114,6 +121,16 @@
 				14AD76472AA762BE004BFCCA /* PlantsModal.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		14AD76492AA8B20B004BFCCA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				14AD764A2AA8B21D004BFCCA /* Plant.swift */,
+				14AD764C2AA8B2A1004BFCCA /* Plants.swift */,
+				14AD764E2AA8B2B9004BFCCA /* Emergence.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		14F0B1FD2A6025300019497B /* Extensions */ = {
@@ -242,12 +259,15 @@
 				14F0B1FF2A6025470019497B /* Color.swift in Sources */,
 				14AD76482AA762BE004BFCCA /* PlantsModal.swift in Sources */,
 				14F0B2042A60346C0019497B /* ARScreen.swift in Sources */,
+				14AD764B2AA8B21D004BFCCA /* Plant.swift in Sources */,
 				14158CCE2A38958E00C7533B /* CustomARView.swift in Sources */,
+				14AD764D2AA8B2A1004BFCCA /* Plants.swift in Sources */,
 				14158CD02A38967900C7533B /* ARViewRepresentable.swift in Sources */,
 				14F0B20C2A627DB80019497B /* View.swift in Sources */,
 				14F0B2082A603C220019497B /* HomeTab.swift in Sources */,
 				14F0B20F2A627E260019497B /* ViewModifiers.swift in Sources */,
 				14158CD52A38A91C00C7533B /* ARManager.swift in Sources */,
+				14AD764F2AA8B2B9004BFCCA /* Emergence.swift in Sources */,
 				14158CC02A3893D800C7533B /* PrecisionScoutApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

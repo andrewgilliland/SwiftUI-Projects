@@ -1,23 +1,6 @@
 import simd
 import SwiftUI
 
-class Plants: ObservableObject {
-    @Published var value: [Plant] = []
-}
-
-struct Plant: Hashable, Identifiable {
-    let id = UUID()
-    let emergence: Emergence
-    let position: SIMD3<Float>
-}
-
-enum Emergence: String {
-    case good = "Good"
-    case le1 = "LE1"
-    case le2 = "LE2"
-    case noGerm = "No Germ"
-}
-
 struct ButtonOption: Hashable {
     let emergence: Emergence
     let color: Color
