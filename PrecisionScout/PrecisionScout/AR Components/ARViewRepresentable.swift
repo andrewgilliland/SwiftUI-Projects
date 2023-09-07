@@ -8,7 +8,5 @@ struct ARViewRepresentable: UIViewRepresentable {
         return CustomARView(plants: plants)
     }
 
-    func updateUIView(_: UIViewType, context _: Context) {
-        print("updateUIView")
-    }
+    func updateUIView(_: UIViewType, context _: Context) {}
 }

@@ -21,15 +21,23 @@ class CustomARView: ARView, ARSessionDelegate {
     convenience init(plants: Plants) {
         self.init(plants: plants, frame: UIScreen.main.bounds)
 
+        configureSession()
         subscribeToActionStream()
-        session.delegate = self
-//        drawLine()
     }
 
     func session(_: ARSession, didUpdate _: [ARAnchor]) {
-//        print("Session didUpdate")
-        startCameraPositionUpdateTimer()
+//        startCameraPositionUpdateTimer()
     }
+
+//    private func session(_: ARView, didAdd anchors: [ARAnchor]) {
+//        print("session: didAdd")
+//        for anchor in anchors {
+//            if let planeAnchor = anchor as? ARPlaneAnchor {
+//                let extent = planeAnchor.extent
+//                let center = planeAnchor.center
+//            }
+//        }
+//    }
 
     @MainActor dynamic required init(frame _: CGRect) {
         fatalError("init(frame:) has not been implemented")
@@ -61,32 +69,29 @@ class CustomARView: ARView, ARSessionDelegate {
 
             print("Camera Position: \(String(describing: self?.cameraPosition))")
 
-//            let entity = AnchorEntity(plane: .horizontal)
-//            entity.addChild(ModelEntity(mesh: MeshResource.generateBox(size: 0.01), materials: [SimpleMaterial(color: .red, isMetallic: true)]))
-//            entity.transform.translation = (self?.cameraPostion)!
-//            self?.scene.addAnchor(entity)
             if !(self?.plants.value.isEmpty)! {
-                print("drawLine")
-                self?.drawLine()
+//                self?.drawLine()
             }
         }
     }
 
-    func drawLine() {
-        let startPosition = plants.value.last?.position ?? SIMD3<Float>(-0.5, 0, -1)
-        let endPosition = cameraPosition ?? SIMD3<Float>(0.5, 0, 1)
+    func drawLine(from: SIMD3<Float>, to: SIMD3<Float>) {
+        print("from: \(from)")
+        print("to: \(to)")
 
-        let midpoint = (startPosition + endPosition) / 2
+        let midpoint = (from + to) / 2
+        print("midpoint: \(midpoint)")
 
         let line = AnchorEntity()
         line.position = midpoint
-        line.look(at: startPosition, from: midpoint, relativeTo: nil)
+        line.look(at: from, from: midpoint, relativeTo: nil)
 
-        let meters = simd_distance(startPosition, endPosition)
+        let meters = simd_distance(from, to)
+        print("\(meters) m")
         let lineMaterial = SimpleMaterial(color: .red, roughness: 1, isMetallic: false)
-        let bottomLineMesh = MeshResource.generateBox(width: 0.025, height: 0.025 / 2.5, depth: meters)
+        let bottomLineMesh = MeshResource.generateBox(width: 0.005, height: 0.005, depth: meters)
         let bottomLineEntity = ModelEntity(mesh: bottomLineMesh, materials: [lineMaterial])
-        bottomLineEntity.position = .init(0, 0.025, 0)
+        bottomLineEntity.position = .init(midpoint)
 
         line.addChild(bottomLineEntity)
 
@@ -142,19 +147,37 @@ class CustomARView: ARView, ARSessionDelegate {
         anchor.addChild(entity)
     }
 
+    func configureSession() {
+        let config = ARWorldTrackingConfiguration()
+        config.planeDetection = .horizontal
+        session.run(config)
+        session.delegate = self
+    }
+
     func placePlant(emergence: Emergence, color: Color) {
+        let rayCast = raycast(from: CGPoint(x: bounds.midX, y: bounds.midY), allowing: .existingPlaneGeometry, alignment: .horizontal).first
+        print(String(describing: rayCast?.worldTransform))
+
         let anchor = AnchorEntity(plane: .horizontal)
 
         anchor.addChild(ModelEntity(mesh: MeshResource.generateBox(size: 0.01), materials: [SimpleMaterial(color: UIColor(color), isMetallic: true)]))
 
         scene.addAnchor(anchor)
 
-        plants.value.append(Plant(emergence: emergence, position: anchor.position))
+        plants.value.append(Plant(emergence: emergence, position: anchor.position(relativeTo: nil)))
 
-        print("Plants: \(plants.value)")
+//        print("Plants: \(plants.value)")
+
+//        let allAnchors = scene.anchors
+//        print(allAnchors)
+
+        for case let anchorEntity as AnchorEntity in scene.anchors {
+            print(anchorEntity.position(relativeTo: nil))
+        }
 
         if plants.value.count >= 2 {
-            print("More than one plant added")
+//            print("More than one plant added")
+            drawLine(from: plants.value.dropLast().last?.position ?? SIMD3<Float>(-0.1, -0.1, -0.1), to: plants.value.last?.position ?? SIMD3<Float>(0.1, 0.1, 0.1))
         }
     }
 
