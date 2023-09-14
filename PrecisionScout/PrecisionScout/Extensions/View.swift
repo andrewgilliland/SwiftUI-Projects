@@ -1,10 +1,3 @@
-//
-//  View.swift
-//  PrecisionScout
-//
-//  Created by Andrew Gilliland on 7/15/23.
-//
-
 import SwiftUI
 
 extension View {

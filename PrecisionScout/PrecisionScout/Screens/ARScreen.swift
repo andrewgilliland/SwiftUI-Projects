@@ -1,40 +1,28 @@
 import simd
 import SwiftUI
 
-struct ButtonOption: Hashable {
-    let emergence: Emergence
-    let color: Color
-}
-
-func getDistance(_ pointA: SIMD3<Float>, _ pointB: SIMD3<Float>) -> Float {
-    let difference = pointB - pointA
+func getDistance(from: SIMD3<Float>, to: SIMD3<Float>) -> Float {
+    let difference = to - from
     let squaredDistance = dot(difference, difference)
     let distance = sqrt(squaredDistance)
+    // print("\(distance)")
 
     return distance
 }
 
-func displayImperial(meters: Float) -> String {
-    let totalInches = Int(39.3701 * meters)
-    let feet = totalInches / 12
-    let inches = totalInches % 12
-
-    return "\(feet)'\(inches)\""
-}
-
 struct ARScreen: View {
-    @ObservedObject var plants = Plants()
+    @ObservedObject var arObservable = ARObservable()
     @State private var isMenuOpen = false
 
     let buttonOptions: [ButtonOption] = [ButtonOption(emergence: .good, color: .green), ButtonOption(emergence: .le1, color: .yellow), ButtonOption(emergence: .le2, color: .orange), ButtonOption(emergence: .noGerm, color: .red)]
 
     var body: some View {
-        ARViewRepresentable(plants: plants)
+        ARViewRepresentable(plants: arObservable)
             .overlay {
                 ZStack {
-                    Image(systemName: "plus.circle")
-                        .foregroundColor(.white)
-                        .font(.system(size: 28))
+//                    Image(systemName: "plus.circle")
+//                        .foregroundColor(.white)
+//                        .font(.system(size: 28))
 
                     VStack {
                         Spacer()
@@ -57,7 +45,7 @@ struct ARScreen: View {
 
                                 Button {
                                     ARManager.shared.actionStream.send(.removeAllAnchors)
-                                    plants.value = []
+                                    arObservable.plants = []
                                 } label: {
                                     Image(systemName: "trash")
                                         .foregroundColor(.red)
@@ -71,18 +59,20 @@ struct ARScreen: View {
                                 ForEach(buttonOptions, id: \.self) { buttonOption in
                                     Button {
                                         ARManager.shared.actionStream.send(.placePlant(emergence: buttonOption.emergence, color: buttonOption.color))
+                                        print("\(arObservable.onPlane)")
 
                                     } label: {
                                         ZStack {
                                             buttonOption.color
                                                 .frame(width: 70, height: 70)
-                                                .background(buttonOption.color)
+                                                .opacity(arObservable.onPlane ? 1 : 0.5)
                                                 .cornerRadius(8)
                                             Text(buttonOption.emergence.rawValue)
                                                 .foregroundColor(.white)
                                                 .fontWeight(.semibold)
                                         }
                                     }
+                                    .disabled(!arObservable.onPlane)
                                 }
                             }
                         }
@@ -91,9 +81,12 @@ struct ARScreen: View {
                     .padding(.bottom, 30)
                 }
             }
+            .onChange(of: arObservable.onPlane) { _ in
+                print("onChange onPlane: \(arObservable.onPlane)")
+            }
             .ignoresSafeArea()
             .sheet(isPresented: $isMenuOpen) {
-                PlantsModal(plants: plants)
+                PlantsModal(plants: arObservable)
             }
     }
 }

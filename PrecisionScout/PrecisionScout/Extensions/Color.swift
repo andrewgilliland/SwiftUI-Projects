@@ -1,10 +1,3 @@
-//
-//  Color.swift
-//  PrecisionScout
-//
-//  Created by Andrew Gilliland on 7/13/23.
-//
-
 import SwiftUI
 
 extension Color {

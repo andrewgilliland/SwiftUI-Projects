@@ -15,10 +15,13 @@
 		14158CD02A38967900C7533B /* ARViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14158CCF2A38967900C7533B /* ARViewRepresentable.swift */; };
 		14158CD32A38A8C400C7533B /* ARAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14158CD22A38A8C400C7533B /* ARAction.swift */; };
 		14158CD52A38A91C00C7533B /* ARManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14158CD42A38A91C00C7533B /* ARManager.swift */; };
+		144385CA2AB33DD600CC5337 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 144385C92AB33DD600CC5337 /* FocusEntity */; };
 		14AD76482AA762BE004BFCCA /* PlantsModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AD76472AA762BE004BFCCA /* PlantsModal.swift */; };
 		14AD764B2AA8B21D004BFCCA /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AD764A2AA8B21D004BFCCA /* Plant.swift */; };
-		14AD764D2AA8B2A1004BFCCA /* Plants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AD764C2AA8B2A1004BFCCA /* Plants.swift */; };
+		14AD764D2AA8B2A1004BFCCA /* ARObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AD764C2AA8B2A1004BFCCA /* ARObservable.swift */; };
 		14AD764F2AA8B2B9004BFCCA /* Emergence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AD764E2AA8B2B9004BFCCA /* Emergence.swift */; };
+		14AD76512AAB4CF2004BFCCA /* Float+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AD76502AAB4CF2004BFCCA /* Float+Extension.swift */; };
+		14AD76532AAB5007004BFCCA /* ButtonOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AD76522AAB5007004BFCCA /* ButtonOption.swift */; };
 		14F0B1FF2A6025470019497B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F0B1FE2A6025470019497B /* Color.swift */; };
 		14F0B2042A60346C0019497B /* ARScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F0B2032A60346C0019497B /* ARScreen.swift */; };
 		14F0B2062A60378C0019497B /* DataTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F0B2052A60378C0019497B /* DataTab.swift */; };
@@ -40,8 +43,10 @@
 		14158CD42A38A91C00C7533B /* ARManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARManager.swift; sourceTree = "<group>"; };
 		14AD76472AA762BE004BFCCA /* PlantsModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsModal.swift; sourceTree = "<group>"; };
 		14AD764A2AA8B21D004BFCCA /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
-		14AD764C2AA8B2A1004BFCCA /* Plants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plants.swift; sourceTree = "<group>"; };
+		14AD764C2AA8B2A1004BFCCA /* ARObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARObservable.swift; sourceTree = "<group>"; };
 		14AD764E2AA8B2B9004BFCCA /* Emergence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emergence.swift; sourceTree = "<group>"; };
+		14AD76502AAB4CF2004BFCCA /* Float+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float+Extension.swift"; sourceTree = "<group>"; };
+		14AD76522AAB5007004BFCCA /* ButtonOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonOption.swift; sourceTree = "<group>"; };
 		14F0B1FE2A6025470019497B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		14F0B2032A60346C0019497B /* ARScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARScreen.swift; sourceTree = "<group>"; };
 		14F0B2052A60378C0019497B /* DataTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTab.swift; sourceTree = "<group>"; };
@@ -56,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				144385CA2AB33DD600CC5337 /* FocusEntity in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,8 +133,9 @@
 			isa = PBXGroup;
 			children = (
 				14AD764A2AA8B21D004BFCCA /* Plant.swift */,
-				14AD764C2AA8B2A1004BFCCA /* Plants.swift */,
+				14AD764C2AA8B2A1004BFCCA /* ARObservable.swift */,
 				14AD764E2AA8B2B9004BFCCA /* Emergence.swift */,
+				14AD76522AAB5007004BFCCA /* ButtonOption.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -138,6 +145,7 @@
 			children = (
 				14F0B1FE2A6025470019497B /* Color.swift */,
 				14F0B20B2A627DB80019497B /* View.swift */,
+				14AD76502AAB4CF2004BFCCA /* Float+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -177,6 +185,9 @@
 			dependencies = (
 			);
 			name = PrecisionScout;
+			packageProductDependencies = (
+				144385C92AB33DD600CC5337 /* FocusEntity */,
+			);
 			productName = PrecisionScout;
 			productReference = 14158CBC2A3893D800C7533B /* PrecisionScout.app */;
 			productType = "com.apple.product-type.application";
@@ -205,6 +216,9 @@
 				Base,
 			);
 			mainGroup = 14158CB32A3893D800C7533B;
+			packageReferences = (
+				144385C82AB33DD600CC5337 /* XCRemoteSwiftPackageReference "FocusEntity" */,
+			);
 			productRefGroup = 14158CBD2A3893D800C7533B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -261,13 +275,15 @@
 				14F0B2042A60346C0019497B /* ARScreen.swift in Sources */,
 				14AD764B2AA8B21D004BFCCA /* Plant.swift in Sources */,
 				14158CCE2A38958E00C7533B /* CustomARView.swift in Sources */,
-				14AD764D2AA8B2A1004BFCCA /* Plants.swift in Sources */,
+				14AD764D2AA8B2A1004BFCCA /* ARObservable.swift in Sources */,
 				14158CD02A38967900C7533B /* ARViewRepresentable.swift in Sources */,
 				14F0B20C2A627DB80019497B /* View.swift in Sources */,
+				14AD76532AAB5007004BFCCA /* ButtonOption.swift in Sources */,
 				14F0B2082A603C220019497B /* HomeTab.swift in Sources */,
 				14F0B20F2A627E260019497B /* ViewModifiers.swift in Sources */,
 				14158CD52A38A91C00C7533B /* ARManager.swift in Sources */,
 				14AD764F2AA8B2B9004BFCCA /* Emergence.swift in Sources */,
+				14AD76512AAB4CF2004BFCCA /* Float+Extension.swift in Sources */,
 				14158CC02A3893D800C7533B /* PrecisionScoutApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,6 +489,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		144385C82AB33DD600CC5337 /* XCRemoteSwiftPackageReference "FocusEntity" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maxxfrazer/FocusEntity";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		144385C92AB33DD600CC5337 /* FocusEntity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 144385C82AB33DD600CC5337 /* XCRemoteSwiftPackageReference "FocusEntity" */;
+			productName = FocusEntity;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 14158CB42A3893D800C7533B /* Project object */;
 }

@@ -1,18 +1,17 @@
 import SwiftUI
 
 struct PlantsModal: View {
-    @ObservedObject var plants: Plants
+    @ObservedObject var plants: ARObservable
     var body: some View {
         VStack(alignment: .leading) {
-            ForEach(Array(plants.value.enumerated()), id: \.offset) { index, plant in
+            ForEach(Array(plants.plants.enumerated()), id: \.offset) { index, plant in
                 HStack {
                     Text("\(index + 1). \(plant.emergence.rawValue)")
                         .foregroundColor(.white)
-//                        .background(.green)
 
                     Spacer()
 
-                    Text("\(index >= 1 ? displayImperial(meters: getDistance(plants.value[index].position, plants.value[index - 1].position)) : "0'0\"")")
+                    Text("\(index >= 1 ? getDistance(from: plants.plants[index - 1].position, to: plants.plants[index].position).displayImperial : "0'0\"")")
                         .foregroundColor(.white)
                 }
             }

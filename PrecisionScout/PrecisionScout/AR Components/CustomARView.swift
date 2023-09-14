@@ -1,16 +1,29 @@
 import ARKit
 import Combine
+import FocusEntity
+import Foundation
 import RealityKit
 import SwiftUI
 
 class CustomARView: ARView, ARSessionDelegate {
-    @ObservedObject var plants: Plants
+    @ObservedObject var plants: ARObservable
+
     var timer: Timer?
     var cameraPosition: simd_float3?
+    var focusEntity: FocusEntity?
 
-    required init(plants: Plants, frame frameRect: CGRect) {
+    required init(plants: ARObservable, frame frameRect: CGRect) {
         self.plants = plants
+
         super.init(frame: frameRect)
+
+        focusEntity = FocusEntity(on: self, style: .classic())
+    }
+
+    convenience init(plants: ARObservable) {
+        self.init(plants: plants, frame: UIScreen.main.bounds)
+        configureSession()
+        subscribeToActionStream()
     }
 
     @available(*, unavailable)
@@ -18,26 +31,14 @@ class CustomARView: ARView, ARSessionDelegate {
         fatalError("init(coder:) has not been implemented")
     }
 
-    convenience init(plants: Plants) {
-        self.init(plants: plants, frame: UIScreen.main.bounds)
-
-        configureSession()
-        subscribeToActionStream()
-    }
-
     func session(_: ARSession, didUpdate _: [ARAnchor]) {
 //        startCameraPositionUpdateTimer()
-    }
 
-//    private func session(_: ARView, didAdd anchors: [ARAnchor]) {
-//        print("session: didAdd")
-//        for anchor in anchors {
-//            if let planeAnchor = anchor as? ARPlaneAnchor {
-//                let extent = planeAnchor.extent
-//                let center = planeAnchor.center
-//            }
-//        }
-//    }
+        DispatchQueue.main.async {
+            print(self.focusEntity?.onPlane)
+            self.plants.onPlane = self.focusEntity!.onPlane || false
+        }
+    }
 
     @MainActor dynamic required init(frame _: CGRect) {
         fatalError("init(frame:) has not been implemented")
@@ -69,25 +70,26 @@ class CustomARView: ARView, ARSessionDelegate {
 
             print("Camera Position: \(String(describing: self?.cameraPosition))")
 
-            if !(self?.plants.value.isEmpty)! {
+            if !(self?.plants.plants.isEmpty)! {
 //                self?.drawLine()
             }
         }
     }
 
     func drawLine(from: SIMD3<Float>, to: SIMD3<Float>) {
-        print("from: \(from)")
-        print("to: \(to)")
+//        print("from: \(from)")
+//        print("to: \(to)")
 
         let midpoint = (from + to) / 2
-        print("midpoint: \(midpoint)")
+//        print("midpoint: \(midpoint)")
 
         let line = AnchorEntity()
         line.position = midpoint
         line.look(at: from, from: midpoint, relativeTo: nil)
 
         let meters = simd_distance(from, to)
-        print("\(meters) m")
+//        print("\(meters.metersToInches)\"")
+
         let lineMaterial = SimpleMaterial(color: .red, roughness: 1, isMetallic: false)
         let bottomLineMesh = MeshResource.generateBox(width: 0.005, height: 0.005, depth: meters)
         let bottomLineEntity = ModelEntity(mesh: bottomLineMesh, materials: [lineMaterial])
@@ -96,6 +98,52 @@ class CustomARView: ARView, ARSessionDelegate {
         line.addChild(bottomLineEntity)
 
         scene.addAnchor(line)
+    }
+
+    func configureSession() {
+        let config = ARWorldTrackingConfiguration()
+        config.planeDetection = .horizontal
+        session.run(config)
+        session.delegate = self
+    }
+
+    func placePlant(emergence: Emergence, color: Color) {
+        let rayCast = raycast(from: CGPoint(x: bounds.midX, y: bounds.midY), allowing: .existingPlaneGeometry, alignment: .horizontal).first
+//        print(String(describing: rayCast?.worldTransform))
+
+        let anchor = AnchorEntity(plane: .horizontal)
+
+        anchor.addChild(ModelEntity(mesh: MeshResource.generateBox(size: 0.01), materials: [SimpleMaterial(color: UIColor(color), isMetallic: true)]))
+
+        scene.addAnchor(anchor)
+
+        plants.plants.append(Plant(emergence: emergence, position: anchor.position(relativeTo: nil)))
+
+//        for case let anchorEntity as AnchorEntity in scene.anchors {
+//            print(anchorEntity.position(relativeTo: nil))
+//        }
+
+        if plants.plants.count >= 2 {
+//            print("More than one plant added")
+            drawLine(from: anchor.position(relativeTo: nil), to: plants.plants.last?.position ?? SIMD3<Float>(0.1, 0.1, 0.1))
+        }
+    }
+
+    func getCurrentPosition() {
+        print("getCurrentPosition")
+//        print(session.currentFrame?.camera)
+//        guard let camera = session.currentFrame?.camera else { return }
+
+//        let cameraPosition = SCNVector3(camera.transform.columns.3.x, camera.transform.columns.3.y, camera.transform.columns.3.z)
+//        let cameraPosition = camera.transform.translation
+//        print(camera.transform)
+
+//        let forwardDirection = SCNVector3(-camera.transform.m31, -camera.transform.m32, -camera.transform.m33)
+
+//        let lookAtPoint = cameraPosition + forwardDirection
+//        let lookAtPoint = cameraPosition + camera.transform.forward
+
+//        return lookAtPoinst
     }
 
     func configurationExamples() {
@@ -145,56 +193,5 @@ class CustomARView: ARView, ARSessionDelegate {
         // Add entity to an anchor, so it's placed in the scene
         let anchor = AnchorEntity()
         anchor.addChild(entity)
-    }
-
-    func configureSession() {
-        let config = ARWorldTrackingConfiguration()
-        config.planeDetection = .horizontal
-        session.run(config)
-        session.delegate = self
-    }
-
-    func placePlant(emergence: Emergence, color: Color) {
-        let rayCast = raycast(from: CGPoint(x: bounds.midX, y: bounds.midY), allowing: .existingPlaneGeometry, alignment: .horizontal).first
-        print(String(describing: rayCast?.worldTransform))
-
-        let anchor = AnchorEntity(plane: .horizontal)
-
-        anchor.addChild(ModelEntity(mesh: MeshResource.generateBox(size: 0.01), materials: [SimpleMaterial(color: UIColor(color), isMetallic: true)]))
-
-        scene.addAnchor(anchor)
-
-        plants.value.append(Plant(emergence: emergence, position: anchor.position(relativeTo: nil)))
-
-//        print("Plants: \(plants.value)")
-
-//        let allAnchors = scene.anchors
-//        print(allAnchors)
-
-        for case let anchorEntity as AnchorEntity in scene.anchors {
-            print(anchorEntity.position(relativeTo: nil))
-        }
-
-        if plants.value.count >= 2 {
-//            print("More than one plant added")
-            drawLine(from: plants.value.dropLast().last?.position ?? SIMD3<Float>(-0.1, -0.1, -0.1), to: plants.value.last?.position ?? SIMD3<Float>(0.1, 0.1, 0.1))
-        }
-    }
-
-    func getCurrentPosition() {
-        print("getCurrentPosition")
-//        print(session.currentFrame?.camera)
-//        guard let camera = session.currentFrame?.camera else { return }
-
-//        let cameraPosition = SCNVector3(camera.transform.columns.3.x, camera.transform.columns.3.y, camera.transform.columns.3.z)
-//        let cameraPosition = camera.transform.translation
-//        print(camera.transform)
-
-//        let forwardDirection = SCNVector3(-camera.transform.m31, -camera.transform.m32, -camera.transform.m33)
-
-//        let lookAtPoint = cameraPosition + forwardDirection
-//        let lookAtPoint = cameraPosition + camera.transform.forward
-
-//        return lookAtPoinst
     }
 }
