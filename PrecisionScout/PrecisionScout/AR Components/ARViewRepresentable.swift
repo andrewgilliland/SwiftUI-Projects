@@ -2,10 +2,10 @@ import ARKit
 import SwiftUI
 
 struct ARViewRepresentable: UIViewRepresentable {
-    @ObservedObject var plants: ARObservable
+    @ObservedObject var arObservable: ARObservable
 
     func makeUIView(context _: Context) -> some UIView {
-        return CustomARView(plants: plants)
+        return CustomARView(arObservable: arObservable)
     }
 
     func updateUIView(_: UIViewType, context _: Context) {}

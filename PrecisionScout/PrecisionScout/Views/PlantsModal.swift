@@ -11,7 +11,7 @@ struct PlantsModal: View {
 
                     Spacer()
 
-                    Text("\(index >= 1 ? getDistance(from: plants.plants[index - 1].position, to: plants.plants[index].position).displayImperial : "0'0\"")")
+                    Text("\(index >= 1 ? getDistance(from: plants.plants[index - 1].position, to: plants.plants[index].position).displayImperial : "-")")
                         .foregroundColor(.white)
                 }
             }

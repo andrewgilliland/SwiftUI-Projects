@@ -5,7 +5,6 @@ func getDistance(from: SIMD3<Float>, to: SIMD3<Float>) -> Float {
     let difference = to - from
     let squaredDistance = dot(difference, difference)
     let distance = sqrt(squaredDistance)
-    // print("\(distance)")
 
     return distance
 }
@@ -17,7 +16,7 @@ struct ARScreen: View {
     let buttonOptions: [ButtonOption] = [ButtonOption(emergence: .good, color: .green), ButtonOption(emergence: .le1, color: .yellow), ButtonOption(emergence: .le2, color: .orange), ButtonOption(emergence: .noGerm, color: .red)]
 
     var body: some View {
-        ARViewRepresentable(plants: arObservable)
+        ARViewRepresentable(arObservable: arObservable)
             .overlay {
                 ZStack {
 //                    Image(systemName: "plus.circle")

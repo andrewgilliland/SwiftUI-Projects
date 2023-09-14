@@ -6,22 +6,22 @@ import RealityKit
 import SwiftUI
 
 class CustomARView: ARView, ARSessionDelegate {
-    @ObservedObject var plants: ARObservable
+    @ObservedObject var arObservable: ARObservable
 
     var timer: Timer?
     var cameraPosition: simd_float3?
     var focusEntity: FocusEntity?
 
-    required init(plants: ARObservable, frame frameRect: CGRect) {
-        self.plants = plants
+    required init(arObservable: ARObservable, frame frameRect: CGRect) {
+        self.arObservable = arObservable
 
         super.init(frame: frameRect)
 
         focusEntity = FocusEntity(on: self, style: .classic())
     }
 
-    convenience init(plants: ARObservable) {
-        self.init(plants: plants, frame: UIScreen.main.bounds)
+    convenience init(arObservable: ARObservable) {
+        self.init(arObservable: arObservable, frame: UIScreen.main.bounds)
         configureSession()
         subscribeToActionStream()
     }
@@ -35,8 +35,7 @@ class CustomARView: ARView, ARSessionDelegate {
 //        startCameraPositionUpdateTimer()
 
         DispatchQueue.main.async {
-            print(self.focusEntity?.onPlane)
-            self.plants.onPlane = self.focusEntity!.onPlane || false
+            self.arObservable.onPlane = self.focusEntity!.onPlane || false
         }
     }
 
@@ -70,7 +69,7 @@ class CustomARView: ARView, ARSessionDelegate {
 
             print("Camera Position: \(String(describing: self?.cameraPosition))")
 
-            if !(self?.plants.plants.isEmpty)! {
+            if !(self?.arObservable.plants.isEmpty)! {
 //                self?.drawLine()
             }
         }
@@ -117,15 +116,15 @@ class CustomARView: ARView, ARSessionDelegate {
 
         scene.addAnchor(anchor)
 
-        plants.plants.append(Plant(emergence: emergence, position: anchor.position(relativeTo: nil)))
+        arObservable.plants.append(Plant(emergence: emergence, position: anchor.position(relativeTo: nil)))
 
 //        for case let anchorEntity as AnchorEntity in scene.anchors {
 //            print(anchorEntity.position(relativeTo: nil))
 //        }
 
-        if plants.plants.count >= 2 {
+        if arObservable.plants.count >= 2 {
 //            print("More than one plant added")
-            drawLine(from: anchor.position(relativeTo: nil), to: plants.plants.last?.position ?? SIMD3<Float>(0.1, 0.1, 0.1))
+            drawLine(from: anchor.position(relativeTo: nil), to: arObservable.plants.last?.position ?? SIMD3<Float>(0.1, 0.1, 0.1))
         }
     }
 
