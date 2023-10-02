@@ -19,10 +19,6 @@ struct ARScreen: View {
         ARViewRepresentable(arObservable: arObservable)
             .overlay {
                 ZStack {
-//                    Image(systemName: "plus.circle")
-//                        .foregroundColor(.white)
-//                        .font(.system(size: 28))
-
                     VStack {
                         Spacer()
 
@@ -58,7 +54,6 @@ struct ARScreen: View {
                                 ForEach(buttonOptions, id: \.self) { buttonOption in
                                     Button {
                                         ARManager.shared.actionStream.send(.placePlant(emergence: buttonOption.emergence, color: buttonOption.color))
-                                        print("\(arObservable.onPlane)")
 
                                     } label: {
                                         ZStack {
@@ -79,9 +74,6 @@ struct ARScreen: View {
                     .padding()
                     .padding(.bottom, 30)
                 }
-            }
-            .onChange(of: arObservable.onPlane) { _ in
-                print("onChange onPlane: \(arObservable.onPlane)")
             }
             .ignoresSafeArea()
             .sheet(isPresented: $isMenuOpen) {

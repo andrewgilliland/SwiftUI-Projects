@@ -22,6 +22,7 @@ class CustomARView: ARView, ARSessionDelegate {
 
     convenience init(arObservable: ARObservable) {
         self.init(arObservable: arObservable, frame: UIScreen.main.bounds)
+        addCoaching()
         configureSession()
         subscribeToActionStream()
     }
@@ -80,23 +81,22 @@ class CustomARView: ARView, ARSessionDelegate {
 //        print("to: \(to)")
 
         let midpoint = (from + to) / 2
-//        print("midpoint: \(midpoint)")
+        print("midpoint: \(midpoint)")
 
-        let line = AnchorEntity()
-        line.position = midpoint
-        line.look(at: from, from: midpoint, relativeTo: nil)
+        let vector = to - from
+        let angle = atan2(vector.y, vector.x) // In Radians
+        let angleInDegrees = angle * 180 / .pi
+        print("angle in degrees: \(angleInDegrees)")
 
-        let meters = simd_distance(from, to)
-//        print("\(meters.metersToInches)\"")
+        let lineAnchor = AnchorEntity(world: midpoint)
+        lineAnchor.orientation = simd_quatf(angle: angleInDegrees, axis: SIMD3(x: 0, y: 1, z: 0))
 
-        let lineMaterial = SimpleMaterial(color: .red, roughness: 1, isMetallic: false)
-        let bottomLineMesh = MeshResource.generateBox(width: 0.005, height: 0.005, depth: meters)
-        let bottomLineEntity = ModelEntity(mesh: bottomLineMesh, materials: [lineMaterial])
-        bottomLineEntity.position = .init(midpoint)
+        let meters = simd.distance(from, to)
 
-        line.addChild(bottomLineEntity)
+        let lineEntity = ModelEntity(mesh: MeshResource.generateBox(width: 0.005, height: 0.005, depth: meters), materials: [SimpleMaterial(color: .red, roughness: 1, isMetallic: false)])
+        lineAnchor.addChild(lineEntity)
 
-        scene.addAnchor(line)
+        scene.addAnchor(lineAnchor)
     }
 
     func configureSession() {
@@ -107,12 +107,18 @@ class CustomARView: ARView, ARSessionDelegate {
     }
 
     func placePlant(emergence: Emergence, color: Color) {
-        let rayCast = raycast(from: CGPoint(x: bounds.midX, y: bounds.midY), allowing: .existingPlaneGeometry, alignment: .horizontal).first
+//        let rayCast = raycast(from: CGPoint(x: bounds.midX, y: bounds.midY), allowing: .existingPlaneGeometry, alignment: .horizontal).first
 //        print(String(describing: rayCast?.worldTransform))
 
         let anchor = AnchorEntity(plane: .horizontal)
+        let model = ModelEntity(mesh: MeshResource.generateBox(size: 0.025), materials: [SimpleMaterial(color: UIColor(color), isMetallic: false)])
 
-        anchor.addChild(ModelEntity(mesh: MeshResource.generateBox(size: 0.01), materials: [SimpleMaterial(color: UIColor(color), isMetallic: true)]))
+        let light = SpotLight()
+
+        model.generateCollisionShapes(recursive: true)
+        installGestures([.all], for: model)
+
+        anchor.addChild(model)
 
         scene.addAnchor(anchor)
 
@@ -123,8 +129,8 @@ class CustomARView: ARView, ARSessionDelegate {
 //        }
 
         if arObservable.plants.count >= 2 {
-//            print("More than one plant added")
-            drawLine(from: anchor.position(relativeTo: nil), to: arObservable.plants.last?.position ?? SIMD3<Float>(0.1, 0.1, 0.1))
+            print("More than one plant added")
+            drawLine(from: arObservable.plants[arObservable.plants.count - 2].position, to: arObservable.plants.last?.position ?? SIMD3<Float>(1.0, 1.0, 1.0))
         }
     }
 
@@ -193,4 +199,28 @@ class CustomARView: ARView, ARSessionDelegate {
         let anchor = AnchorEntity()
         anchor.addChild(entity)
     }
+}
+
+extension ARView: ARCoachingOverlayViewDelegate {
+    func addCoaching() {
+        // Create a ARCoachingOverlayView object
+        let coachingOverlay = ARCoachingOverlayView()
+        // Make sure it rescales if the device orientation changes
+        coachingOverlay.autoresizingMask = [
+            .flexibleWidth, .flexibleHeight,
+        ]
+        addSubview(coachingOverlay)
+        // Set the Augmented Reality goal
+        coachingOverlay.goal = .horizontalPlane
+        // Set the ARSession
+        coachingOverlay.session = session
+        // Set the delegate for any callbacks
+        coachingOverlay.delegate = self
+    }
+    // Example callback for the delegate object
+    //  func coachingOverlayViewDidDeactivate(
+//    _ coachingOverlayView: ARCoachingOverlayView
+    //  ) {
+//    self.addObjectsToScene()
+    //  }
 }
