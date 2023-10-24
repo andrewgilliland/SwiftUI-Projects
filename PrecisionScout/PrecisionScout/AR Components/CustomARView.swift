@@ -113,7 +113,7 @@ class CustomARView: ARView, ARSessionDelegate {
         let anchor = AnchorEntity(plane: .horizontal)
         let model = ModelEntity(mesh: MeshResource.generateBox(size: 0.025), materials: [SimpleMaterial(color: UIColor(color), isMetallic: false)])
 
-        let light = SpotLight()
+//        let light = SpotLight()
 
         model.generateCollisionShapes(recursive: true)
         installGestures([.all], for: model)

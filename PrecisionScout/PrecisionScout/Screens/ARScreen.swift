@@ -54,7 +54,6 @@ struct ARScreen: View {
                                 ForEach(buttonOptions, id: \.self) { buttonOption in
                                     Button {
                                         ARManager.shared.actionStream.send(.placePlant(emergence: buttonOption.emergence, color: buttonOption.color))
-
                                     } label: {
                                         ZStack {
                                             buttonOption.color
