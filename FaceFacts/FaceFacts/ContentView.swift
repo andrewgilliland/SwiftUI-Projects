@@ -30,7 +30,6 @@ struct ContentView: View {
                             .tag([SortDescriptor(\Person.name, order: .reverse)])
                     }
                 }
-                
                 Button("Add Person", systemImage: "plus", action: addPerson)
             }
             .searchable(text: $searchText)
