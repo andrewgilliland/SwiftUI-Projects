@@ -21,12 +21,15 @@ struct EditPersonView: View {
                     .textInputAutocapitalization(.never)
             }
             
-            Section {
+            Section("Notes") {
                 TextField("Details about \(person.name)", text: $person.details, axis: .vertical)
             }
         }
         .navigationTitle("Edit \(person.name)")
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            print("EditPersonView")
+        }
     }
 }
 

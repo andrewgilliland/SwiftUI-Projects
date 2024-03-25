@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
+    @Environment(\.modelContext) var modelContext
     @State private var path = [Person]()
     @Query var people: [Person]
     
@@ -23,11 +24,20 @@ struct ContentView: View {
             }
             .navigationTitle("FaceFacts")
             .navigationDestination(for: Person.self) { person in
-                Text(person.name)
+               EditPersonView(person: person)
+            }
+            .toolbar {
+                Button("Add Person", systemImage: "plus", action: addPerson)
             }
         }
     }
-}
+    
+    func addPerson(){
+        let person = Person(name: "", email: "", details: "")
+        modelContext.insert(person)
+        path.append(person)
+    }
+ }
 
 #Preview {
     ContentView()
