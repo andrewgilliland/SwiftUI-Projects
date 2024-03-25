@@ -23,16 +23,16 @@ struct PeopleView: View {
         }
     }
     
-    init(searchString: String = "") {
-        
-        
+    init(searchString: String = "", sortOrder: [SortDescriptor<Person>] = []) {
         _people = Query(filter: #Predicate { person in
             if searchString.isEmpty {
                 true
             } else {
                 person.name.localizedStandardContains(searchString)
+                || person.email.localizedStandardContains(searchString)
+                || person.details.localizedStandardContains(searchString)
             }
-        })
+        }, sort: sortOrder)
     }
     
     func deletePerson(at offsets: IndexSet) {
