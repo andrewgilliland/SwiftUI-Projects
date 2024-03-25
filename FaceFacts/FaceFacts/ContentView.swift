@@ -9,10 +9,11 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
+    @State private var path = [Person]()
     @Query var people: [Person]
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             List {
                 ForEach(people) { person in
                     NavigationLink(value: person) {
