@@ -15,7 +15,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack(path: $path) {
-           PeopleView()
+           PeopleView(searchString: searchText)
             .navigationTitle("FaceFacts")
             .navigationDestination(for: Person.self) { person in
                EditPersonView(person: person)
