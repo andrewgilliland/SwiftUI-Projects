@@ -7,11 +7,13 @@
 
 import SwiftUI
 import SwiftData
+import PhotosUI
 
 struct EditPersonView: View {
     @Environment(\.modelContext) var modelContext
     @Bindable var person: Person
     @Binding var navigationPath: NavigationPath
+    @State private var selectedItem: PhotosPickerItem?
     
     @Query(sort: [
         SortDescriptor(\Event.name),
@@ -20,6 +22,12 @@ struct EditPersonView: View {
     
     var body: some View {
         Form {
+            Section {
+                PhotosPicker(selection: $selectedItem, matching: .images) {
+                    Label("Select a photo", systemImage: "person")
+                }
+            }
+            
             Section {
                 TextField("Name", text: $person.name)
                     .textContentType(.name)
@@ -62,6 +70,12 @@ struct EditPersonView: View {
         let event = Event(name: "", location: "")
         modelContext.insert(event)
         navigationPath.append(event)
+    }
+    
+    func loadPhoto() {
+        Task {
+            person.photo = try await selectedItem?.loadTransferable(type: Data.self)
+        }
     }
 }
 
