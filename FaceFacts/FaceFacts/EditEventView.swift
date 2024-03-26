@@ -15,7 +15,7 @@ struct EditEventView: View {
             TextField("Name of the event", text: $event.name)
             TextField("Location", text: $event.location)
         }
-        .navigationTitle("Edit \($event.name)")
+        .navigationTitle("Edit \(event.name)")
         .navigationBarTitleDisplayMode(.inline)
     }
 }

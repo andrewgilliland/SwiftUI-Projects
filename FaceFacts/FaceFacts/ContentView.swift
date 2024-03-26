@@ -10,7 +10,7 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) var modelContext
-    @State private var path = [Person]()
+    @State private var path = NavigationPath()
     @State private var searchText = ""
     @State private var sortOrder = [SortDescriptor(\Person.name)]
     
@@ -19,7 +19,7 @@ struct ContentView: View {
             PeopleView(searchString: searchText, sortOrder: sortOrder)
             .navigationTitle("FaceFacts")
             .navigationDestination(for: Person.self) { person in
-               EditPersonView(person: person)
+                EditPersonView(person: person, navigationPath: $path)
             }
             .toolbar {
                 Menu("Sort", systemImage: "arrow.up.arrow.down") {
