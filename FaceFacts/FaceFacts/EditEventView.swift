@@ -11,10 +11,15 @@ struct EditEventView: View {
     @Bindable var event: Event
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            TextField("Name of the event", text: $event.name)
+            TextField("Location", text: $event.location)
+        }
+        .navigationTitle("Edit \($event.name)")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
-#Preview {
-    EditEventView()
-}
+//#Preview {
+//    EditEventView()
+//}
