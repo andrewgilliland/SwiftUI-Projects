@@ -16,6 +16,7 @@
 		144D8FCA2BB1ACAE000911CC /* PeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144D8FC92BB1ACAE000911CC /* PeopleView.swift */; };
 		144D8FCC2BB22983000911CC /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144D8FCB2BB22983000911CC /* Event.swift */; };
 		144D8FCE2BB22BD2000911CC /* EditEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144D8FCD2BB22BD2000911CC /* EditEventView.swift */; };
+		144D8FD12BB3014A000911CC /* Previewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144D8FD02BB3014A000911CC /* Previewer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		144D8FC92BB1ACAE000911CC /* PeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleView.swift; sourceTree = "<group>"; };
 		144D8FCB2BB22983000911CC /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		144D8FCD2BB22BD2000911CC /* EditEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventView.swift; sourceTree = "<group>"; };
+		144D8FD02BB3014A000911CC /* Previewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Previewer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,15 +63,11 @@
 		144D8FB62BB10D4E000911CC /* FaceFacts */ = {
 			isa = PBXGroup;
 			children = (
-				144D8FCB2BB22983000911CC /* Event.swift */,
 				144D8FB72BB10D4E000911CC /* FaceFactsApp.swift */,
-				144D8FB92BB10D4E000911CC /* ContentView.swift */,
-				144D8FC92BB1ACAE000911CC /* PeopleView.swift */,
-				144D8FC52BB10F53000911CC /* Person.swift */,
+				144D8FD22BB307EC000911CC /* Views */,
+				144D8FCF2BB30013000911CC /* Models */,
 				144D8FBB2BB10D4F000911CC /* Assets.xcassets */,
 				144D8FBD2BB10D4F000911CC /* Preview Content */,
-				144D8FC72BB115E4000911CC /* EditPersonView.swift */,
-				144D8FCD2BB22BD2000911CC /* EditEventView.swift */,
 			);
 			path = FaceFacts;
 			sourceTree = "<group>";
@@ -80,6 +78,27 @@
 				144D8FBE2BB10D4F000911CC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		144D8FCF2BB30013000911CC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				144D8FC52BB10F53000911CC /* Person.swift */,
+				144D8FCB2BB22983000911CC /* Event.swift */,
+				144D8FD02BB3014A000911CC /* Previewer.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		144D8FD22BB307EC000911CC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				144D8FC72BB115E4000911CC /* EditPersonView.swift */,
+				144D8FB92BB10D4E000911CC /* ContentView.swift */,
+				144D8FC92BB1ACAE000911CC /* PeopleView.swift */,
+				144D8FCD2BB22BD2000911CC /* EditEventView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +174,7 @@
 				144D8FC62BB10F53000911CC /* Person.swift in Sources */,
 				144D8FCA2BB1ACAE000911CC /* PeopleView.swift in Sources */,
 				144D8FBA2BB10D4E000911CC /* ContentView.swift in Sources */,
+				144D8FD12BB3014A000911CC /* Previewer.swift in Sources */,
 				144D8FB82BB10D4E000911CC /* FaceFactsApp.swift in Sources */,
 				144D8FCC2BB22983000911CC /* Event.swift in Sources */,
 				144D8FC82BB115E4000911CC /* EditPersonView.swift in Sources */,

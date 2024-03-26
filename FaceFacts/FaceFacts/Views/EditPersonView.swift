@@ -53,9 +53,6 @@ struct EditPersonView: View {
         }
         .navigationTitle("Edit \(person.name)")
         .navigationBarTitleDisplayMode(.inline)
-        .onAppear {
-            print("EditPersonView")
-        }
         .navigationDestination(for: Event.self) { event in
             EditEventView(event: event)
         }
@@ -68,6 +65,12 @@ struct EditPersonView: View {
     }
 }
 
-//#Preview {
-//    EditPersonView()
-//}
+#Preview {
+    do {
+        let previewer = try Previewer()
+        
+        return EditPersonView(person: previewer.person, navigationPath: .constant(NavigationPath())).modelContainer(previewer.container)
+    } catch {
+        return Text("Failed to create preview: \(error.localizedDescription)")
+    }
+}
