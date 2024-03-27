@@ -10,9 +10,9 @@ import SwiftData
 
 @Model
 class Person {
-var name: String
-    var email: String
-    var details: String
+    var name: String = ""
+    var email: String = ""
+    var details: String = ""
     var metAt: Event?
     @Attribute(.externalStorage) var photo: Data?
     

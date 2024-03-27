@@ -26,7 +26,7 @@ struct ContentView: View {
                     Picker("Sort", selection: $sortOrder) {
                         Text("Name (A-Z)")
                             .tag([SortDescriptor(\Person.name)])
-                        Text("Name (A-Z)")
+                        Text("Name (Z-A)")
                             .tag([SortDescriptor(\Person.name, order: .reverse)])
                     }
                 }
